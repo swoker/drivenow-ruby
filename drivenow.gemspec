@@ -1,4 +1,5 @@
 require File.expand_path("../lib/drivenow/version", __FILE__)
+require 'base64'
 
 Gem::Specification.new do |s|
   s.name = "drivenow"
