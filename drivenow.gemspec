@@ -5,8 +5,8 @@ Gem::Specification.new do |s|
   s.version = Drivenow::VERSION
   s.platform = Gem::Platform::RUBY
   s.authors = ["Simon Woker"]
-  s.email = ["github@simonwoker.de"]
-  s.homepage = "http://github.com/swoker/drivenow-ruby"
+  s.email = Base64.decode64("c3Rhc3RueUAxMDFpZGVhcy5jeg==\n")
+  s.homepage = "https://github.com/swoker/DriveNow-Wrapper"
   s.summary = "Wrapper for the DriveNow API"
   s.description = "Wraps the DriveNow JSON to use it nicely in your own environment. You can use this Gem to read all cars that are available."
 
