@@ -1,11 +1,10 @@
-# http://guides.rubygems.org/make-your-own-gem/
-
 = Installation
     gem install 'drivenow'
 
 = Example
+	require 'drivenow'
 
-	cars = Drivenow::Agent.new().cars
+	cars = Drivenow::Agent.new(:city => :muenchen).cars
 
 	car = cars.first
 	puts car.json.inspect

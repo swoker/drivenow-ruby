@@ -12,13 +12,12 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = ">= 1.3.6"
 
-  # lol - required for validation
-  #s.rubyforge_project = "newgem"
-
   # If you have other dependencies, add them here
   s.add_runtime_dependency "json", ["~> 1.6"]
   
-  #s.add_development_dependency "bourne", [">= 0"]
+  s.add_development_dependency "rake", [">= 0"]
+  s.add_development_dependency "rspec", ["~>2.8"]
+
 
   # If you need to check in files that aren't .rb files, add them here
   s.files = Dir["{lib}/**/*.rb", "bin/*", "LICENSE", "*.md"]
