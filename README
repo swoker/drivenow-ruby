@@ -4,7 +4,7 @@
 = Example
 	require 'drivenow'
 
-        puts Drivenow.Agent.cities.keys.inspect # show all available cities
+	puts "Available cities: #{Drivenow::Agent.cities.keys.inspect}" 
 
 	# get all available cars
 	cars = Drivenow::Agent.new(:city => :muenchen).cars
