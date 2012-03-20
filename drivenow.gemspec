@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.platform = Gem::Platform::RUBY
   s.authors = ["Simon Woker"]
   s.email = Base64.decode64("c3Rhc3RueUAxMDFpZGVhcy5jeg==\n")
-  s.homepage = "https://github.com/swoker/DriveNow-Wrapper"
+  s.homepage = "https://github.com/swoker/drivenow-ruby"
   s.summary = "Wrapper for the DriveNow API"
   s.description = "Wraps the DriveNow JSON to use it nicely in your own environment. You can use this Gem to read all cars that are available."
 
@@ -17,7 +17,6 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency "json", ["~> 1.6"]
   
   s.add_development_dependency "rake", [">= 0"]
-  s.add_development_dependency "rspec", ["~>2.8"]
 
 
   # If you need to check in files that aren't .rb files, add them here

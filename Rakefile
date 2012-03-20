@@ -2,9 +2,7 @@ require "bundler"
 Bundler.setup
 $KCODE = 'U'
 
-require "rspec/core/rake_task"
 require 'rake/testtask'
-RSpec::Core::RakeTask.new(:spec)
 
 gemspec = eval(File.read("drivenow.gemspec"))
 
