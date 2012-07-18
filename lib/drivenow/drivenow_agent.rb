@@ -13,7 +13,7 @@ module Drivenow
 		#--
 		# TODO: Option for the Xpath for cars-array inside the JSON
 		def initialize(options = {})
-			options = { :uri => 'https://www.drive-now.com/php/metropolis/vehicle_filter' }.merge(options)
+			options = { :uri => 'https://www.drive-now.com/php/metropolis/json.vehicle_filter' }.merge(options)
 			cities = Agent.cities
 			
 			page = open(options[:uri]).read
@@ -35,7 +35,7 @@ module Drivenow
 		#  * Berlin
 		#  * Düsseldorf
 		#  * München
-		#  * Unterhaching (part of M�nchen)
+		#  * Unterhaching (part of M�nchen)
 		# Can easily be overridden if there are more cities available in the future
 		#--
 		# TODO: Unterhaching, Oberding and Korschenbroich are part of other cities... needs to be an array instead of one string
