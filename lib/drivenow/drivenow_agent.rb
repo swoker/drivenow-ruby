@@ -2,7 +2,7 @@ module Drivenow
 	class Agent
 		require 'open-uri'
 		require 'json'
-		$KCODE = "U"
+		$KCODE = "U" if RUBY_VERSION < '1.9.0'
 
 		attr_reader :cars
 
