@@ -1,6 +1,6 @@
 require "bundler"
 Bundler.setup
-$KCODE = 'U'
+$KCODE = 'U' if RUBY_VERSION < '1.9.0'
 
 require 'rake/testtask'
 
