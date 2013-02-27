@@ -13,14 +13,14 @@ module Drivenow
 		#--
 		# TODO: Option for the Xpath for cars-array inside the JSON
 		def initialize(options = {})
-			options = { :uri => 'https://www.drive-now.com/php/metropolis/json.vehicle_filter' }.merge(options)
 			cities = Agent.cities
-			
+			unless options[:city].nil?
+				url_params = "cit=#{cities[options[:city]]}"
+			end
+			options = { :uri => "https://www.drive-now.com/php/metropolis/json.vehicle_filter?#{url_params}" }.merge(options)
+
 			page = open(options[:uri]).read
 			cars = JSON(page)["rec"]["vehicles"]["vehicles"]
-			unless options[:city].nil?
-				cars = cars.select { |item| item["cit"] == cities[options[:city]] }
-			end
 			cities = cities.invert
 			cars.each { |item| item["cit"] = cities[item["cit"]] }
 			cars.map! { |item| Car.new(item) }
@@ -35,18 +35,13 @@ module Drivenow
 		#  * Berlin
 		#  * Düsseldorf
 		#  * München
-		#  * Unterhaching (part of M�nchen)
 		# Can easily be overridden if there are more cities available in the future
-		#--
-		# TODO: Unterhaching, Oberding and Korschenbroich are part of other cities... needs to be an array instead of one string
 		def self.cities
 			{
 				:duesseldorf => "1293",
 				:berlin => "6099", 
 				:muenchen => "4604",
-				#:unterhaching => "7590",
-				#:oberding => "7591",
-				#:korschenbroich => "1294"
+				:koeln => "1774"
 			}
 		end
 	end
